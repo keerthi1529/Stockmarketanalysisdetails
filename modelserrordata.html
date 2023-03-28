@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+      .hole{
+        background-image: url("ml.jpg");
+        background-size: cover;
+        
+      }
+      .main{
+        background-color:antiquewhite;
+        width: 500px;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 590px;
+        align-items: center;
+        margin-top: 100px;
+      }
+      
+      .main1{
+        justify-content: space-around;
+        background-color: rgb(3, 72, 97);
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 90px;   
+        width: 300px;
+        height: 30px;
+        color: aliceblue;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .traindet{
+        color: rgb(21, 23, 25);
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+       text-align: center;
+       background-color: rgb(19, 156, 230);
+      }
+      .train{
+        color: rgb(21, 23, 25);
+        font-size: large;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .testdet{
+        color: rgb(21, 23, 25);
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+       text-align: center;
+       background-color: rgb(61, 148, 235);
+      }
+      .test{
+        color: rgb(21, 23, 25);
+        font-size: large;
+        margin-top: 15px;
+        text-align: center;
+      }
+      .search{
+        background-color: rgb(244, 216, 75);
+        width: 450px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        padding: 10px 10px;
+        margin-top: 200px;
+        margin-left: 600px;
+        margin-bottom: 100px;
+      }
+      .hii{
+        text-align: center;
+        width: 350px;
+        height: 30px;
+        margin-left: 25px;
+        font-size: 20px;
+        border-radius: 10px;
+        border-color: rgb(30, 29, 29);
+      }
+      .hiimg{
+        width: 30px;
+        height: 20px;
+      }
+    </style>
+</head>
+<body class="hole">
+  <div class="main" id="details">
+      <div class="main1">Model Details</div>
+           <div class="traindet">Train data error values</div>
+        <div class="train">
+           <div class="one">Root Mean Square Error - <span id="RMSE1">36</span></div>
+           <div class="three">Mean Squared Error - <span id="mse1">36</span></div>
+           <div class="five">Mean Absolute Error - <span id="mae1">36</span></div>
+           <div class="seven">R Square Score - <span id="rss1">36</span></div>
+        </div>
+           <div class="testdet">Test data error values</div>
+           <div class="test">
+           <div class="nine">Root Mean Square Error - <span id="RMSE2">36</span></div>
+           <div class="ten">Mean Squared Error - <span id="mse2">36</span></div>
+           <div class="eleven">Mean Absolute Error - <span id="mae2">36</span></div>
+           <div class="twelve">R Square Score - <span id="rss2">36</span></div>
+      </div>
+  </div>
+  <div class="search">
+    <div ><input  class="hii" type="text" placeholder="Search model" id="model" /></div>
+    <div class="hiimg"><input type="button" value="&#128269;" id="btn"></div> 
+  </div>
+<script>
+let loc=document.getElementById("model")
+let btnc=document.getElementById("btn")
+btnc.onclick=function()
+{  
+    if(loc.value=="random forest")
+    {
+        // alert("Enter valid location");
+        RMSE1.innerText=15.9436225836691;
+        mse1.innerHTML=254.19910109048334;
+        mae1.innerHTML=11.312237081999973;
+        rss1.innerHTML=0.9817002884174;
+        RMSE2.innerHTML=36.38576945671656;
+        mse2.innerHTML=1323.9242189573279;
+        mae2.innerHTML=28.438943404861146;
+        rss2.innerHTML=0.8319787608761716;
+    }
+    else if(loc.value=="lstm")
+    {
+        // alert("Enter valid location");
+        RMSE1.innerHTML=33.75178420438107;
+        mse1.innerHTML=1139.1829369791074;
+        mae1.innerHTML=25.618499126077577;
+        rss1.innerHTML=0.9179905865243072;
+        RMSE2.innerHTML=40.313369463693874;
+        mse2.innerHTML=1625.1677575162855;
+        mae2.innerHTML=30.334425174479172;
+        rss2.innerHTML=0.7937474845674827;
+    }
+    else if(loc.value=="k nearest neighbour")
+    {
+        // alert("Enter valid location");
+        RMSE1.innerHTML=19.102832946916077;
+        mse1.innerHTML=364.9182265977824;
+        mae1.innerHTML=12.864392459693876;
+        rss1.innerHTML=0.9942090121196007;
+        RMSE2.innerHTML=449.63063066354664;
+        mse2.innerHTML=202167.7040308987;
+        mae2.innerHTML=317.56263694407056;
+        rss2.innerHTML=-0.7569855335190045;
+    }
+    else if(loc.value=="linear regression")
+    {
+        // alert("Enter valid location");
+        RMSE1.innerHTML=1;
+        mse1.innerHTML=254.19910109048334;
+        mae1.innerHTML=11.312237081999973;
+        rss1.innerHTML=0.9817002884174;
+        RMSE2.innerHTML=36.38576945671656;
+        mse2.innerHTML=1323.9242189573279;
+        mae2.innerHTML=28.438943404861146;
+        rss2.innerHTML=0.8319787608761716;
+    }
+    else{
+        alert("Enter valid model");
+        }
+}
+</script>
+</body>
+</html>
